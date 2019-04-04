@@ -1,0 +1,28 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Tiêu đề</title>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+$(function(){
+    function showValues() {
+        var str = $("form").serialize();
+        console.log(str);
+        $("#result").text(str);
+    }
+    $("input[type='radio']").on("click",showValues);
+    showValues();
+});
+</script>
+</head>
+
+<body>
+<form>
+<input type="radio" name="radio" value="Male" checked="checked" id="male" />
+<label for="male">Male:</label>
+<input type="radio" name="radio" value="Female" id="female" />
+<label for="female">Female:</label>
+</form>
+<p id="result"></p>
+</body>
+</html>
